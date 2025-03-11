@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Copperplate Regular';
+    src: url('../assets/fonts/Copperplate-Regular.ttf');
+    font-display: swap;
+}
+.copperplate {
+    font-family: 'Copperplate Regular';
+    font-style: normal;
+  }
+  
+  .open-sans {
+    font-family: "Open Sans", sans-serif;
+  }
+
+input::placeholder{
+   @apply text-gray-600;
+}
+
+
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+} */
