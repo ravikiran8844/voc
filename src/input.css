@@ -31,3 +31,13 @@ input::placeholder{
     top: 0;
     width: auto;
 } */
+
+input[type='radio'] + label {
+  @apply bg-white rounded-lg shadow-lg border border-gray-200 aspect-square text-black flex flex-col items-center justify-center cursor-pointer p-2 font-medium gap-1;
+}
+input[type='radio'] + label:hover {
+  @apply bg-yellow-700 text-white;
+}
+input[type='radio']:checked + label {
+  @apply bg-[#964A26] text-white;
+}

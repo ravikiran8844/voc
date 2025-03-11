@@ -25,9 +25,22 @@
           <div class="flex justify-center mt-6">
             <button
               onclick="nextStep(0)"
-              class="copperplate text-2xl font-semibold uppercase cursor-pointer"
+              class="copperplate text-2xl font-semibold uppercase cursor-pointer flex gap-1 justify-center items-center"
             >
               Enter Feedback
+              <svg
+                width="32"
+                height="32"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -73,6 +86,7 @@
                 name="salesExecNumber"
                 placeholder="Enter Sales Executive E-Number"
                 required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                 class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
               />
             </div>
@@ -115,7 +129,7 @@
             <h2
               class="text-lg font-semibold mb-10 text-center uppercase copperplate"
             >
-            Enter Customer Number
+              Enter Customer Number
             </h2>
             <div class="mb-4">
               <!-- <label for="customerNumber" class="block text-gray-700"
@@ -126,12 +140,12 @@
                 id="customerNumber"
                 name="customerNumber"
                 required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                 placeholder="Enter Customer Number"
                 class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
               />
             </div>
             <div class="flex justify-end mt-10">
-            
               <button
                 onclick="nextStep(2)"
                 class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
@@ -142,200 +156,912 @@
           </div>
         </div>
 
-
         <!-- Step 3 -->
         <div class="step hidden" id="step3">
-            <div>
-                <img src="assets/images/header-banner.webp" alt="banner" />
-              </div>
-              <div class="p-8 relative">
-                <button
-                  onclick="prevStep(3)"
-                  class="text-black cursor-pointer mt-1 text-sm sm:absolute uppercase copperplate bg-transparent flex gap-1 items-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="size-4"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Back
-                </button>
-    
-                <h2
-                  class="text-lg font-semibold mb-10 text-center uppercase copperplate"
-                >
-                Customer details
-                </h2>
-
-          
-                <div class="grid gap-x-6 gap-y-8 grid-cols-1 md:grid-cols-3">
-                    <div class="relative md:col-span-3">
-                        <label for="name" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2">Name</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          placeholder="Enter name"
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-1">
-                        <label for="gender" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2">Gender</label>
-                        <select
-                          id="gender"
-                          name="gender"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        >
-                          <option value="">Select Gender</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-            
-                      <div class="relative md:col-span-2">
-                        <label for="mobile" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
-                          >Mobile Number</label
-                        >
-                        <input
-                          type="tel"
-                          id="mobile"
-                          name="mobile"
-                          placeholder="Enter mobile number"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                          minlength="10"
-                          maxlength="10"
-                          oninput="validateMobile(this)"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-1">
-                        <label for="dob" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2">Date of Birth</label>
-                        <input
-                          type="date"
-                          id="dob"
-                          name="dob"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-2">
-                        <label for="email" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2">Email ID</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          placeholder="Enter email address"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-1">
-                        <label for="age" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2">Age</label>
-                        <input
-                          type="text"
-                          id="age"
-                          name="age"
-                          placeholder="Enter age"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-1">
-                        <label for="maritalStatus" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
-                          >Marital Status</label
-                        >
-                        <select
-                          id="maritalStatus"
-                          name="maritalStatus"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        >
-                          <option value="">Select Status</option>
-                          <option value="single">Single</option>
-                          <option value="married">Married</option>
-                          <option value="divorced">Divorced</option>
-                          <option value="widowed">Widowed</option>
-                        </select>
-                      </div>
-            
-                      <div class="relative md:col-span-1">
-                        <label for="anniversaryDate" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
-                          >Anniversary Date</label
-                        >
-                        <input
-                          type="date"
-                          id="anniversaryDate"
-                          name="anniversaryDate"
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-            
-                      <div class="relative md:col-span-3">
-                        <label for="education" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
-                          >Education Qualification</label
-                        >
-                        <select
-                          id="education"
-                          name="education"
-                          required
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        >
-                          <option value="">Select Qualification</option>
-                          <option value="highschool">High School</option>
-                          <option value="bachelor">Bachelor's Degree</option>
-                          <option value="master">Master's Degree</option>
-                          <option value="phd">PhD</option>
-                        </select>
-                      </div>
-            
-                      <div class="relative md:col-span-3">
-                        <label for="profession" class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
-                          >Profession</label
-                        >
-                        <input
-                          type="text"
-                          id="profession"
-                          name="profession"
-                          required
-                          placeholder="Enter profession"
-                          class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
-                        />
-                      </div>
-                </div>
-
-          <div class="flex justify-end mt-10">
-           
+          <div>
+            <img src="assets/images/header-banner.webp" alt="banner" />
+          </div>
+          <div class="p-8 relative">
             <button
-              onclick="submitForm()"
-              class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
+              onclick="prevStep(3)"
+              class="text-black cursor-pointer mt-1 text-sm sm:absolute uppercase copperplate bg-transparent flex gap-1 items-center"
             >
-              Submit
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Back
             </button>
+
+            <h2
+              class="text-lg font-semibold mb-10 text-center uppercase copperplate"
+            >
+              Customer details
+            </h2>
+
+            <div class="grid gap-x-6 gap-y-8 grid-cols-1 md:grid-cols-3">
+              <div class="relative md:col-span-3">
+                <label
+                  for="name"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Enter name"
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+
+              <div class="relative md:col-span-1">
+                <label
+                  for="gender"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Gender</label
+                >
+                <select
+                  id="gender"
+                  name="gender"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                >
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="relative md:col-span-2">
+                <label
+                  for="mobile"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Mobile Number</label
+                >
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="Enter mobile number"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                  minlength="10"
+                  maxlength="10"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                />
+              </div>
+
+              <div class="relative md:col-span-1">
+                <label
+                  for="dob"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Date of Birth</label
+                >
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+
+              <div class="relative md:col-span-2">
+                <label
+                  for="email"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Email ID</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter email address"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+
+              <div class="relative md:col-span-1">
+                <label
+                  for="age"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Age</label
+                >
+                <input
+                  type="text"
+                  id="age"
+                  name="age"
+                  placeholder="Enter age"
+                  required
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+
+              <div class="relative md:col-span-1">
+                <label
+                  for="maritalStatus"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Marital Status</label
+                >
+                <select
+                  id="maritalStatus"
+                  name="maritalStatus"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                >
+                  <option value="">Select Status</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widowed">Widowed</option>
+                </select>
+              </div>
+
+              <div class="relative md:col-span-1">
+                <label
+                  for="anniversaryDate"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Anniversary Date</label
+                >
+                <input
+                  type="date"
+                  id="anniversaryDate"
+                  name="anniversaryDate"
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+
+              <div class="relative md:col-span-3">
+                <label
+                  for="education"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Education Qualification</label
+                >
+                <select
+                  id="education"
+                  name="education"
+                  required
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                >
+                  <option value="">Select Qualification</option>
+                  <option value="highschool">High School</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="phd">PhD</option>
+                </select>
+              </div>
+
+              <div class="relative md:col-span-3">
+                <label
+                  for="profession"
+                  class="text-black absolute transform -translate-y-2 left-4 bg-[#FCFAF9] text-xs px-2"
+                  >Profession</label
+                >
+                <input
+                  type="text"
+                  id="profession"
+                  name="profession"
+                  required
+                  placeholder="Enter profession"
+                  class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
+                />
+              </div>
+            </div>
+
+            <div class="flex justify-end mt-10">
+              <button
+                onclick="nextStep(3)"
+                class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
+              >
+                Continue
+              </button>
+            </div>
           </div>
         </div>
+
+        <div class="step hidden" id="step4">
+          <div class="p-8 py-16 relative">
+            <button
+              onclick="prevStep(4)"
+              class="text-black cursor-pointer mt-1 text-sm sm:absolute uppercase copperplate bg-transparent flex gap-1 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Back
+            </button>
+
+            <h2
+              class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
+            >
+            PLEASE SHARE YOUR THOUGHTS
+            ABOUT YOUR IN-STORE EXPERIENCE
+            </h2>
+
+
+            <div class="space-y-8">
+                <div>
+                  <div class="mb-4 text-black">1.⁠ ⁠How would you rate the lighting and decor of our showroom?</div>
+
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                      <div>
+                       
+                        <input id="4-1-1" name="4-1" value="excellent" type="radio" class="hidden">
+                        <label for="4-1-1" >
+                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                          <span>
+                            Excellent
+                          </span> 
+                        </label>
+                      </div>
+
+                      <div>
+                       
+                        <input id="4-1-2" name="4-1" value="good" type="radio" class="hidden">
+                        <label for="4-1-2" > 
+                          <img src="assets/svg/good.svg" alt="good" class="size-12">
+                          <span>
+                            Good
+                          </span> 
+                        </label>
+                      </div>
+
+
+                      <div>
+                      
+                        <input id="4-1-3" name="4-1" value="average" type="radio" class="hidden">
+                        <label for="4-1-3" > 
+                          <img src="assets/svg/average.svg" alt="average" class="size-12">
+                          <span>
+                            Average
+                          </span> 
+                        </label>
+                      </div>
+
+
+                      <div>
+                        
+                        <input id="4-1-4" name="4-1" value="poor" type="radio" class="hidden">
+                        <label for="4-1-4" > 
+                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                          <span>
+                            Poor
+                          </span> 
+                        </label>
+                      </div>
+                     
+                  </div>
+                </div>
+
+
+                <div>
+                  <div class="mb-4 text-black">2.⁠ ⁠How would you rate the cleanliness and maintenance of our showroom?</div>
+              
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              
+                      <div>
+                       
+                        <input id="4-2-1" name="4-2" value="excellent" type="radio" class="hidden">
+                        <label for="4-2-1" >
+                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                          <span>
+                            Excellent
+                          </span> 
+                        </label>
+                      </div>
+              
+                      <div>
+                       
+                        <input id="4-2-2" name="4-2" value="good" type="radio" class="hidden">
+                        <label for="4-2-2" > 
+                          <img src="assets/svg/good.svg" alt="good" class="size-12">
+                          <span>
+                            Good
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                      
+                        <input id="4-2-3" name="4-2" value="average" type="radio" class="hidden">
+                        <label for="4-2-3" > 
+                          <img src="assets/svg/average.svg" alt="average" class="size-12">
+                          <span>
+                            Average
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                        
+                        <input id="4-2-4" name="4-2" value="poor" type="radio" class="hidden">
+                        <label for="4-2-4" > 
+                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                          <span>
+                            Poor
+                          </span> 
+                        </label>
+                      </div>
+                     
+                  </div>
+                </div>
+
+
+                <div>
+                  <div class="mb-4 text-black">3.⁠ ⁠How would you rate the comfort of the seating arrangement in our showroom?</div>
+              
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              
+                      <div>
+                       
+                        <input id="4-3-1" name="4-3" value="excellent" type="radio" class="hidden">
+                        <label for="4-3-1" >
+                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                          <span>
+                            Excellent
+                          </span> 
+                        </label>
+                      </div>
+              
+                      <div>
+                       
+                        <input id="4-3-2" name="4-3" value="good" type="radio" class="hidden">
+                        <label for="4-3-2" > 
+                          <img src="assets/svg/good.svg" alt="good" class="size-12">
+                          <span>
+                            Good
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                      
+                        <input id="4-3-3" name="4-3" value="average" type="radio" class="hidden">
+                        <label for="4-3-3" > 
+                          <img src="assets/svg/average.svg" alt="average" class="size-12">
+                          <span>
+                            Average
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                        
+                        <input id="4-3-4" name="4-3" value="poor" type="radio" class="hidden">
+                        <label for="4-3-4" > 
+                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                          <span>
+                            Poor
+                          </span> 
+                        </label>
+                      </div>
+                     
+                  </div>
+                </div>
+
+
+
+                
+            </div>
+
+          
+
+            <div class="flex justify-end mt-10">
+              <button
+                onclick="nextStep(4)"
+                class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
         </div>
 
+        <div class="step hidden" id="step5">
+          <div class="p-8 py-16 relative">
+            <button
+              onclick="prevStep(5)"
+              class="text-black cursor-pointer mt-1 text-sm sm:absolute uppercase copperplate bg-transparent flex gap-1 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Back
+            </button>
+
+            <h2
+              class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
+            >
+            HOW WAS YOUR EXPERIENCE WITH OUR INSTORE EXECUTIVE
+            </h2>
+
+
+            <div class="space-y-8">
+              <div>
+                <div class="mb-4 text-black">1.⁠ ⁠How satisfied are you with the overall service provided by our showroom staff? </div>
+          
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          
+                    <div>
+                     
+                      <input id="5-1-1" name="5-1" value="excellent" type="radio" class="hidden">
+                      <label for="5-1-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+          
+                    <div>
+                     
+                      <input id="5-1-2" name="5-1" value="good" type="radio" class="hidden">
+                      <label for="5-1-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+          
+          
+                    <div>
+                    
+                      <input id="5-1-3" name="5-1" value="average" type="radio" class="hidden">
+                      <label for="5-1-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+          
+          
+                    <div>
+                      
+                      <input id="5-1-4" name="5-1" value="poor" type="radio" class="hidden">
+                      <label for="5-1-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+              <div>
+                <div class="mb-4 text-black">2.⁠ ⁠How would you rate the friendliness and courtesy of our showroom staff? </div>
+            
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+                    <div>
+                     
+                      <input id="5-2-1" name="5-2" value="excellent" type="radio" class="hidden">
+                      <label for="5-2-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+            
+                    <div>
+                     
+                      <input id="5-2-2" name="5-2" value="good" type="radio" class="hidden">
+                      <label for="5-2-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                    
+                      <input id="5-2-3" name="5-2" value="average" type="radio" class="hidden">
+                      <label for="5-2-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                      
+                      <input id="5-2-4" name="5-2" value="poor" type="radio" class="hidden">
+                      <label for="5-2-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+              <div>
+                <div class="mb-4 text-black">3.⁠ ⁠How knowledgeable was our staff in explaining products and services? </div>
+            
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+                    <div>
+                     
+                      <input id="5-3-1" name="5-3" value="excellent" type="radio" class="hidden">
+                      <label for="5-3-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+            
+                    <div>
+                     
+                      <input id="5-3-2" name="5-3" value="good" type="radio" class="hidden">
+                      <label for="5-3-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                    
+                      <input id="5-3-3" name="5-3" value="average" type="radio" class="hidden">
+                      <label for="5-3-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                      
+                      <input id="5-3-4" name="5-3" value="poor" type="radio" class="hidden">
+                      <label for="5-3-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+              <div>
+                  <div class="mb-4 text-black">4.How would you rate the attentiveness of our staff in assisting you?</div>
+              
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              
+                      <div>
+                       
+                        <input id="5-4-1" name="5-4" value="excellent" type="radio" class="hidden">
+                        <label for="5-4-1" >
+                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                          <span>
+                            Excellent
+                          </span> 
+                        </label>
+                      </div>
+              
+                      <div>
+                       
+                        <input id="5-4-2" name="5-4" value="good" type="radio" class="hidden">
+                        <label for="5-4-2" > 
+                          <img src="assets/svg/good.svg" alt="good" class="size-12">
+                          <span>
+                            Good
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                      
+                        <input id="5-4-3" name="5-4" value="average" type="radio" class="hidden">
+                        <label for="5-4-3" > 
+                          <img src="assets/svg/average.svg" alt="average" class="size-12">
+                          <span>
+                            Average
+                          </span> 
+                        </label>
+                      </div>
+              
+              
+                      <div>
+                        
+                        <input id="5-4-4" name="5-4" value="poor" type="radio" class="hidden">
+                        <label for="5-4-4" > 
+                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                          <span>
+                            Poor
+                          </span> 
+                        </label>
+                      </div>
+                     
+                  </div>
+                </div>
+              
+          </div>
+
+          
+
+            <div class="flex justify-end mt-10">
+              <button
+                onclick="nextStep(5)"
+                class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
         
+
+        <div class="step hidden" id="step6">
+          <div class="p-8 py-16 relative">
+            <button
+              onclick="prevStep(6)"
+              class="text-black cursor-pointer mt-1 text-sm sm:absolute uppercase copperplate bg-transparent flex gap-1 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Back
+            </button>
+
+            <h2
+              class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
+            >
+            ABOUT OUR JEWELLERY DESIGNS
+            </h2>
+
+
+            <div class="space-y-8">
+              <div>
+                <div class="mb-4 text-black">1.⁠ ⁠How would you rate the overall appearance and finishing of the jewellery? </div>
+          
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          
+                    <div>
+                     
+                      <input id="6-1-1" name="6-1" value="excellent" type="radio" class="hidden">
+                      <label for="6-1-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+          
+                    <div>
+                     
+                      <input id="6-1-2" name="6-1" value="good" type="radio" class="hidden">
+                      <label for="6-1-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+          
+          
+                    <div>
+                    
+                      <input id="6-1-3" name="6-1" value="average" type="radio" class="hidden">
+                      <label for="6-1-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+          
+          
+                    <div>
+                      
+                      <input id="6-1-4" name="6-1" value="poor" type="radio" class="hidden">
+                      <label for="6-1-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+              <div>
+                <div class="mb-4 text-black">2.⁠ ⁠How unique and stylish do you find the Jewellery design? </div>
+            
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+                    <div>
+                     
+                      <input id="6-2-1" name="6-2" value="excellent" type="radio" class="hidden">
+                      <label for="6-2-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+            
+                    <div>
+                     
+                      <input id="6-2-2" name="6-2" value="good" type="radio" class="hidden">
+                      <label for="6-2-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                    
+                      <input id="6-2-3" name="6-2" value="average" type="radio" class="hidden">
+                      <label for="6-2-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                      
+                      <input id="6-2-4" name="6-2" value="poor" type="radio" class="hidden">
+                      <label for="6-2-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+              <div>
+                <div class="mb-4 text-black">3.⁠ ⁠How would you rate our jewelry's design and pricing compared to other brands?</div>
+            
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+                    <div>
+                     
+                      <input id="6-3-1" name="6-3" value="excellent" type="radio" class="hidden">
+                      <label for="6-3-1" >
+                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
+                        <span>
+                          Excellent
+                        </span> 
+                      </label>
+                    </div>
+            
+                    <div>
+                     
+                      <input id="6-3-2" name="6-3" value="good" type="radio" class="hidden">
+                      <label for="6-3-2" > 
+                        <img src="assets/svg/good.svg" alt="good" class="size-12">
+                        <span>
+                          Good
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                    
+                      <input id="6-3-3" name="6-3" value="average" type="radio" class="hidden">
+                      <label for="6-3-3" > 
+                        <img src="assets/svg/average.svg" alt="average" class="size-12">
+                        <span>
+                          Average
+                        </span> 
+                      </label>
+                    </div>
+            
+            
+                    <div>
+                      
+                      <input id="6-3-4" name="6-3" value="poor" type="radio" class="hidden">
+                      <label for="6-3-4" > 
+                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
+                        <span>
+                          Poor
+                        </span> 
+                      </label>
+                    </div>
+                   
+                </div>
+              </div>
+          
+          
+          
+              
+          </div>
+          
+
+            <div class="flex justify-end mt-10">
+              <button
+                onclick="submitForm()"
+                class="bg-gray-900 cursor-pointer text-white px-6 py-2 rounded-sm uppercase"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
     <script>
-      let currentStep = 0;
+      let currentStep = 6;
 
       function showStep(step) {
         document
@@ -391,7 +1117,6 @@
       }
 
       function showThankYouScreen() {
-        
         document.getElementById("form-container").innerHTML = `
         <div class="text-center p-10 flex flex-col justify-center items-center h-screen">
             <h2 class="text-4xl font-bold mb-4 copperplate">Thank You!</h2>
