@@ -16,6 +16,32 @@
   </head>
   <body class="bg-white text-[#964A26] antialiased open-sans">
     <main class="max-w-2xl bg-[#FCFAF9] w-full mx-auto min-h-screen">
+    <div id="user-dashboard-topbar" class="hidden">
+      <div
+      
+        class="bg-black text-white py-4 px-8 text-sm flex justify-between items-center gap-10"
+      >
+        <div>Employee Number : E10321</div>
+
+        <div>
+          <button class="flex items-center gap-1 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <path
+                d="M8.77923 3.43555H7.31602V2.00806H1.4632V16.283H7.31602V14.8555H8.77923V16.283C8.77923 17.0714 8.12413 17.7105 7.31602 17.7105H1.4632C0.655097 17.7105 0 17.0714 0 16.283V2.00806C0 1.21968 0.655097 0.580566 1.4632 0.580566H7.31602C8.12413 0.580566 8.77923 1.21968 8.77923 2.00806V3.43555ZM14.329 8.43177L11.1883 5.36774L12.223 4.35835L17.1299 9.14551L12.223 13.9327L11.1883 12.9233L14.329 9.85926H5.85282V8.43177H14.329Z"
+                fill="#F2EDE4"
+              />
+            </svg>
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
       <div class="w-full" id="form-container">
         <!-- Step 0: Survey Intro -->
         <div class="step active p-6 bg-[#F2EDE4]" id="step0">
@@ -131,10 +157,25 @@
             >
               Enter Customer Number
             </h2>
+
+            <!-- <div>
+              <div id="customerNumber" class="mt-2 flex items-center justify-center gap-x-2">
+                  <input required type="text" data-index="0"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="1"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="2"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="3"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="4"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="5"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="6"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="7"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="8"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="9"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+                  <input required type="text" data-index="10"  class="w-12 h-12 rounded-lg border focus:border-indigo-600 outline-none text-center text-2xl" />
+
+              </div>
+          </div> -->
+
             <div class="mb-4">
-              <!-- <label for="customerNumber" class="block text-gray-700"
-                >Customer Number</label
-              > -->
               <input
                 type="text"
                 id="customerNumber"
@@ -145,6 +186,7 @@
                 class="bg-[#FCFAF9] border border-[#C7C7C7] text-gray-600 text-sm rounded-lg block w-full p-3"
               />
             </div>
+
             <div class="flex justify-end mt-10">
               <button
                 onclick="nextStep(2)"
@@ -396,182 +438,253 @@
             <h2
               class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
             >
-            PLEASE SHARE YOUR THOUGHTS
-            ABOUT YOUR IN-STORE EXPERIENCE
+              PLEASE SHARE YOUR THOUGHTS ABOUT YOUR IN-STORE EXPERIENCE
             </h2>
 
-
             <div class="space-y-8">
-                <div>
-                  <div class="mb-4 text-black">1.⁠ ⁠How would you rate the lighting and decor of our showroom?</div>
-
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-                      <div>
-                       
-                        <input id="4-1-1" name="4-1" value="excellent" type="radio" class="hidden">
-                        <label for="4-1-1" >
-                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                          <span>
-                            Excellent
-                          </span> 
-                        </label>
-                      </div>
-
-                      <div>
-                       
-                        <input id="4-1-2" name="4-1" value="good" type="radio" class="hidden">
-                        <label for="4-1-2" > 
-                          <img src="assets/svg/good.svg" alt="good" class="size-12">
-                          <span>
-                            Good
-                          </span> 
-                        </label>
-                      </div>
-
-
-                      <div>
-                      
-                        <input id="4-1-3" name="4-1" value="average" type="radio" class="hidden">
-                        <label for="4-1-3" > 
-                          <img src="assets/svg/average.svg" alt="average" class="size-12">
-                          <span>
-                            Average
-                          </span> 
-                        </label>
-                      </div>
-
-
-                      <div>
-                        
-                        <input id="4-1-4" name="4-1" value="poor" type="radio" class="hidden">
-                        <label for="4-1-4" > 
-                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                          <span>
-                            Poor
-                          </span> 
-                        </label>
-                      </div>
-                     
-                  </div>
+              <div>
+                <div class="mb-4 text-black">
+                  1.⁠ ⁠How would you rate the lighting and decor of our
+                  showroom?
                 </div>
 
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="4-1-1"
+                      name="4-1"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-1-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
 
-                <div>
-                  <div class="mb-4 text-black">2.⁠ ⁠How would you rate the cleanliness and maintenance of our showroom?</div>
-              
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              
-                      <div>
-                       
-                        <input id="4-2-1" name="4-2" value="excellent" type="radio" class="hidden">
-                        <label for="4-2-1" >
-                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                          <span>
-                            Excellent
-                          </span> 
-                        </label>
-                      </div>
-              
-                      <div>
-                       
-                        <input id="4-2-2" name="4-2" value="good" type="radio" class="hidden">
-                        <label for="4-2-2" > 
-                          <img src="assets/svg/good.svg" alt="good" class="size-12">
-                          <span>
-                            Good
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                      
-                        <input id="4-2-3" name="4-2" value="average" type="radio" class="hidden">
-                        <label for="4-2-3" > 
-                          <img src="assets/svg/average.svg" alt="average" class="size-12">
-                          <span>
-                            Average
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                        
-                        <input id="4-2-4" name="4-2" value="poor" type="radio" class="hidden">
-                        <label for="4-2-4" > 
-                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                          <span>
-                            Poor
-                          </span> 
-                        </label>
-                      </div>
-                     
+                  <div>
+                    <input
+                      id="4-1-2"
+                      name="4-1"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-1-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-1-3"
+                      name="4-1"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-1-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-1-4"
+                      name="4-1"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-1-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
                   </div>
                 </div>
+              </div>
 
-
-                <div>
-                  <div class="mb-4 text-black">3.⁠ ⁠How would you rate the comfort of the seating arrangement in our showroom?</div>
-              
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              
-                      <div>
-                       
-                        <input id="4-3-1" name="4-3" value="excellent" type="radio" class="hidden">
-                        <label for="4-3-1" >
-                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                          <span>
-                            Excellent
-                          </span> 
-                        </label>
-                      </div>
-              
-                      <div>
-                       
-                        <input id="4-3-2" name="4-3" value="good" type="radio" class="hidden">
-                        <label for="4-3-2" > 
-                          <img src="assets/svg/good.svg" alt="good" class="size-12">
-                          <span>
-                            Good
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                      
-                        <input id="4-3-3" name="4-3" value="average" type="radio" class="hidden">
-                        <label for="4-3-3" > 
-                          <img src="assets/svg/average.svg" alt="average" class="size-12">
-                          <span>
-                            Average
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                        
-                        <input id="4-3-4" name="4-3" value="poor" type="radio" class="hidden">
-                        <label for="4-3-4" > 
-                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                          <span>
-                            Poor
-                          </span> 
-                        </label>
-                      </div>
-                     
-                  </div>
+              <div>
+                <div class="mb-4 text-black">
+                  2.⁠ ⁠How would you rate the cleanliness and maintenance of our
+                  showroom?
                 </div>
 
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="4-2-1"
+                      name="4-2"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-2-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
 
+                  <div>
+                    <input
+                      id="4-2-2"
+                      name="4-2"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-2-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
 
-                
+                  <div>
+                    <input
+                      id="4-2-3"
+                      name="4-2"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-2-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-2-4"
+                      name="4-2"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-2-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-4 text-black">
+                  3.⁠ ⁠How would you rate the comfort of the seating arrangement
+                  in our showroom?
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="4-3-1"
+                      name="4-3"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-3-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-3-2"
+                      name="4-3"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-3-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-3-3"
+                      name="4-3"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-3-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="4-3-4"
+                      name="4-3"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="4-3-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
-
-          
 
             <div class="flex justify-end mt-10">
               <button
@@ -608,233 +721,334 @@
             <h2
               class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
             >
-            HOW WAS YOUR EXPERIENCE WITH OUR INSTORE EXECUTIVE
+              HOW WAS YOUR EXPERIENCE WITH OUR INSTORE EXECUTIVE
             </h2>
-
 
             <div class="space-y-8">
               <div>
-                <div class="mb-4 text-black">1.⁠ ⁠How satisfied are you with the overall service provided by our showroom staff? </div>
-          
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          
-                    <div>
-                     
-                      <input id="5-1-1" name="5-1" value="excellent" type="radio" class="hidden">
-                      <label for="5-1-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-          
-                    <div>
-                     
-                      <input id="5-1-2" name="5-1" value="good" type="radio" class="hidden">
-                      <label for="5-1-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-          
-          
-                    <div>
-                    
-                      <input id="5-1-3" name="5-1" value="average" type="radio" class="hidden">
-                      <label for="5-1-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-          
-          
-                    <div>
-                      
-                      <input id="5-1-4" name="5-1" value="poor" type="radio" class="hidden">
-                      <label for="5-1-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
+                <div class="mb-4 text-black">
+                  1.⁠ ⁠How satisfied are you with the overall service provided
+                  by our showroom staff?
                 </div>
-              </div>
-          
-          
-              <div>
-                <div class="mb-4 text-black">2.⁠ ⁠How would you rate the friendliness and courtesy of our showroom staff? </div>
-            
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            
-                    <div>
-                     
-                      <input id="5-2-1" name="5-2" value="excellent" type="radio" class="hidden">
-                      <label for="5-2-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-            
-                    <div>
-                     
-                      <input id="5-2-2" name="5-2" value="good" type="radio" class="hidden">
-                      <label for="5-2-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                    
-                      <input id="5-2-3" name="5-2" value="average" type="radio" class="hidden">
-                      <label for="5-2-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                      
-                      <input id="5-2-4" name="5-2" value="poor" type="radio" class="hidden">
-                      <label for="5-2-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
-                </div>
-              </div>
-          
-          
-              <div>
-                <div class="mb-4 text-black">3.⁠ ⁠How knowledgeable was our staff in explaining products and services? </div>
-            
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            
-                    <div>
-                     
-                      <input id="5-3-1" name="5-3" value="excellent" type="radio" class="hidden">
-                      <label for="5-3-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-            
-                    <div>
-                     
-                      <input id="5-3-2" name="5-3" value="good" type="radio" class="hidden">
-                      <label for="5-3-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                    
-                      <input id="5-3-3" name="5-3" value="average" type="radio" class="hidden">
-                      <label for="5-3-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                      
-                      <input id="5-3-4" name="5-3" value="poor" type="radio" class="hidden">
-                      <label for="5-3-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
-                </div>
-              </div>
-          
-          
-              <div>
-                  <div class="mb-4 text-black">4.How would you rate the attentiveness of our staff in assisting you?</div>
-              
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              
-                      <div>
-                       
-                        <input id="5-4-1" name="5-4" value="excellent" type="radio" class="hidden">
-                        <label for="5-4-1" >
-                          <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                          <span>
-                            Excellent
-                          </span> 
-                        </label>
-                      </div>
-              
-                      <div>
-                       
-                        <input id="5-4-2" name="5-4" value="good" type="radio" class="hidden">
-                        <label for="5-4-2" > 
-                          <img src="assets/svg/good.svg" alt="good" class="size-12">
-                          <span>
-                            Good
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                      
-                        <input id="5-4-3" name="5-4" value="average" type="radio" class="hidden">
-                        <label for="5-4-3" > 
-                          <img src="assets/svg/average.svg" alt="average" class="size-12">
-                          <span>
-                            Average
-                          </span> 
-                        </label>
-                      </div>
-              
-              
-                      <div>
-                        
-                        <input id="5-4-4" name="5-4" value="poor" type="radio" class="hidden">
-                        <label for="5-4-4" > 
-                          <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                          <span>
-                            Poor
-                          </span> 
-                        </label>
-                      </div>
-                     
+                  <div>
+                    <input
+                      id="5-1-1"
+                      name="5-1"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-1-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-1-2"
+                      name="5-1"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-1-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-1-3"
+                      name="5-1"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-1-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-1-4"
+                      name="5-1"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-1-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
                   </div>
                 </div>
-              
-          </div>
+              </div>
 
-          
+              <div>
+                <div class="mb-4 text-black">
+                  2.⁠ ⁠How would you rate the friendliness and courtesy of our
+                  showroom staff?
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="5-2-1"
+                      name="5-2"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-2-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-2-2"
+                      name="5-2"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-2-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-2-3"
+                      name="5-2"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-2-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-2-4"
+                      name="5-2"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-2-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-4 text-black">
+                  3.⁠ ⁠How knowledgeable was our staff in explaining products
+                  and services?
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="5-3-1"
+                      name="5-3"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-3-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-3-2"
+                      name="5-3"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-3-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-3-3"
+                      name="5-3"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-3-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-3-4"
+                      name="5-3"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-3-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-4 text-black">
+                  4.How would you rate the attentiveness of our staff in
+                  assisting you?
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div>
+                    <input
+                      id="5-4-1"
+                      name="5-4"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-4-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-4-2"
+                      name="5-4"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-4-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-4-3"
+                      name="5-4"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-4-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="5-4-4"
+                      name="5-4"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="5-4-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="flex justify-end mt-10">
               <button
@@ -846,7 +1060,6 @@
             </div>
           </div>
         </div>
-        
 
         <div class="step hidden" id="step6">
           <div class="p-8 py-16 relative">
@@ -872,180 +1085,252 @@
             <h2
               class="text-lg font-semibold mb-10 text-center uppercase copperplate max-w-md mx-auto"
             >
-            ABOUT OUR JEWELLERY DESIGNS
+              ABOUT OUR JEWELLERY DESIGNS
             </h2>
-
 
             <div class="space-y-8">
               <div>
-                <div class="mb-4 text-black">1.⁠ ⁠How would you rate the overall appearance and finishing of the jewellery? </div>
-          
+                <div class="mb-4 text-black">
+                  1.⁠ ⁠How would you rate the overall appearance and finishing
+                  of the jewellery?
+                </div>
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          
-                    <div>
-                     
-                      <input id="6-1-1" name="6-1" value="excellent" type="radio" class="hidden">
-                      <label for="6-1-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-          
-                    <div>
-                     
-                      <input id="6-1-2" name="6-1" value="good" type="radio" class="hidden">
-                      <label for="6-1-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-          
-          
-                    <div>
-                    
-                      <input id="6-1-3" name="6-1" value="average" type="radio" class="hidden">
-                      <label for="6-1-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-          
-          
-                    <div>
-                      
-                      <input id="6-1-4" name="6-1" value="poor" type="radio" class="hidden">
-                      <label for="6-1-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
+                  <div>
+                    <input
+                      id="6-1-1"
+                      name="6-1"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-1-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-1-2"
+                      name="6-1"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-1-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-1-3"
+                      name="6-1"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-1-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-1-4"
+                      name="6-1"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-1-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
                 </div>
               </div>
-          
-          
+
               <div>
-                <div class="mb-4 text-black">2.⁠ ⁠How unique and stylish do you find the Jewellery design? </div>
-            
+                <div class="mb-4 text-black">
+                  2.⁠ ⁠How unique and stylish do you find the Jewellery design?
+                </div>
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            
-                    <div>
-                     
-                      <input id="6-2-1" name="6-2" value="excellent" type="radio" class="hidden">
-                      <label for="6-2-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-            
-                    <div>
-                     
-                      <input id="6-2-2" name="6-2" value="good" type="radio" class="hidden">
-                      <label for="6-2-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                    
-                      <input id="6-2-3" name="6-2" value="average" type="radio" class="hidden">
-                      <label for="6-2-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                      
-                      <input id="6-2-4" name="6-2" value="poor" type="radio" class="hidden">
-                      <label for="6-2-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
+                  <div>
+                    <input
+                      id="6-2-1"
+                      name="6-2"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-2-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-2-2"
+                      name="6-2"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-2-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-2-3"
+                      name="6-2"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-2-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-2-4"
+                      name="6-2"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-2-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
                 </div>
               </div>
-          
-          
+
               <div>
-                <div class="mb-4 text-black">3.⁠ ⁠How would you rate our jewelry's design and pricing compared to other brands?</div>
-            
+                <div class="mb-4 text-black">
+                  3.⁠ ⁠How would you rate our jewelry's design and pricing
+                  compared to other brands?
+                </div>
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            
-                    <div>
-                     
-                      <input id="6-3-1" name="6-3" value="excellent" type="radio" class="hidden">
-                      <label for="6-3-1" >
-                        <img src="assets/svg/excellent.svg" alt="excellent" class="size-12">
-                        <span>
-                          Excellent
-                        </span> 
-                      </label>
-                    </div>
-            
-                    <div>
-                     
-                      <input id="6-3-2" name="6-3" value="good" type="radio" class="hidden">
-                      <label for="6-3-2" > 
-                        <img src="assets/svg/good.svg" alt="good" class="size-12">
-                        <span>
-                          Good
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                    
-                      <input id="6-3-3" name="6-3" value="average" type="radio" class="hidden">
-                      <label for="6-3-3" > 
-                        <img src="assets/svg/average.svg" alt="average" class="size-12">
-                        <span>
-                          Average
-                        </span> 
-                      </label>
-                    </div>
-            
-            
-                    <div>
-                      
-                      <input id="6-3-4" name="6-3" value="poor" type="radio" class="hidden">
-                      <label for="6-3-4" > 
-                        <img src="assets/svg/poor.svg" alt="poor" class="size-12">
-                        <span>
-                          Poor
-                        </span> 
-                      </label>
-                    </div>
-                   
+                  <div>
+                    <input
+                      id="6-3-1"
+                      name="6-3"
+                      value="excellent"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-3-1">
+                      <img
+                        src="assets/svg/excellent.svg"
+                        alt="excellent"
+                        class="size-12"
+                      />
+                      <span> Excellent </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-3-2"
+                      name="6-3"
+                      value="good"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-3-2">
+                      <img
+                        src="assets/svg/good.svg"
+                        alt="good"
+                        class="size-12"
+                      />
+                      <span> Good </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-3-3"
+                      name="6-3"
+                      value="average"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-3-3">
+                      <img
+                        src="assets/svg/average.svg"
+                        alt="average"
+                        class="size-12"
+                      />
+                      <span> Average </span>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="6-3-4"
+                      name="6-3"
+                      value="poor"
+                      type="radio"
+                      class="hidden"
+                    />
+                    <label for="6-3-4">
+                      <img
+                        src="assets/svg/poor.svg"
+                        alt="poor"
+                        class="size-12"
+                      />
+                      <span> Poor </span>
+                    </label>
+                  </div>
                 </div>
               </div>
-          
-          
-          
-              
-          </div>
-          
+            </div>
 
             <div class="flex justify-end mt-10">
               <button
@@ -1061,7 +1346,8 @@
     </main>
 
     <script>
-      let currentStep = 6;
+      let currentStep = 0;
+      let topBar= document.getElementById("user-dashboard-topbar");
 
       function showStep(step) {
         document
@@ -1071,6 +1357,13 @@
         if (activeStep) {
           activeStep.classList.remove("hidden");
           activeStep.classList.add("active");
+        }
+
+        if(currentStep > 0){
+          topBar.classList.remove("hidden");
+        }
+        else{
+          topBar.classList.add("hidden");
         }
       }
 
@@ -1132,5 +1425,48 @@
       // Start with step 0
       showStep(currentStep);
     </script>
+
+    <!-- <script>
+  const customerNumberRef = document.getElementById("customerNumber");
+  const state = {
+      code1: "",
+      code2: "",
+      code3: "",
+      code4: "",
+      code5: "",
+      code6: "",
+      code7: "",
+      code8: "",
+      code9: "",
+      code10: "",
+
+  };
+
+  customerNumberRef.addEventListener("keyup", (e) => {
+      const target = e.target;
+      const dataIndex = +target.getAttribute("data-index");
+
+      if ((e.key === "Delete" || e.key === "Backspace")) {
+          const next = dataIndex - 1;
+          if (next > -1) {
+              customerNumberRef.children[next].focus();
+          }
+      } else {
+          const next = dataIndex + 1;
+          if (next < customerNumberRef.children.length && target.value !== " " && target.value !== "" && e.key.length === 1) {
+              customerNumberRef.children[next].focus();
+          }
+      }
+  });
+
+  customerNumberRef.addEventListener("input", (e) => {
+      const target = e.target;
+      const dataIndex = +target.getAttribute("data-index");
+      const codeNumber = "code" + (dataIndex + 1);
+      const value = target.value.slice(target.value.length - 1);
+      state[codeNumber] = value;
+      target.value = state[codeNumber];
+  });
+</script> -->
   </body>
 </html>
