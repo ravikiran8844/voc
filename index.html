@@ -21,10 +21,10 @@
       
         class="bg-black text-white py-4 px-8 text-sm flex justify-between items-center gap-10"
       >
-        <div>Employee Number : E10321</div>
+        <div>Employee Number : <span class="font-semibold">E10321</span></div>
 
         <div>
-          <button class="flex items-center gap-1 cursor-pointer">
+          <button class="flex items-center gap-1 cursor-pointer"  onclick="my_modal_1.showModal()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -39,6 +39,33 @@
             </svg>
             Logout
           </button>
+
+          <dialog id="my_modal_1" class="modal">
+            <div class="modal-box p-16  text-black bg-[#FCFAF9] rounded-lg shadow-2xl max-w-sm">
+              
+              <div class="flex flex-col justify-center items-center text-center">
+
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                  </svg>
+                  
+                </div>
+                <div class="text-xl text-[#707070] mt-2">Are you sure you want to Logout?</div>
+
+                  <div class="flex gap-4 items-center justify-center mt-6">
+                    <form method="dialog">
+                      <button class="btn px-6 bg-[#9D4F2A] text-white uppercase">No</button>
+                    </form>
+                    <button class="btn px-6 bg-[#9D4F2A] text-white uppercase">Yes</button>
+
+                  </div>
+              </div>
+             
+            </div>
+          </dialog>
+
+
         </div>
       </div>
     </div>
